@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="styles.css" />
+  <title>Museo360 | Explore History</title>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav>
+  <div class="nav__header">
+    <div class="nav__logo">
+      <a href="#" class="logo">Museo<span>360</span></a>
+    </div>
+    <div class="nav__menu__btn" id="menu-btn">
+      <i class="ri-menu-line"></i>
+    </div>
+  </div>
+
+  <ul class="nav__links" id="nav-links">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#service">Exhibits</a></li>
+    <li><a href="#destination">Museums</a></li>
+    <li><a href="#package">Tours</a></li>
+    <li><a href="#client">Visitors</a></li>
+  </ul>
+
+  <!-- Login/Signup Buttons (always right corner) -->
+  <div class="auth__buttons">
+    <button class="btn btn-login" id="openLogin">Login</button>
+    <button class="btn btn-signup" id="openSignup">Sign Up</button>
+  </div>
+</nav>
+
+<!-- 🔹 Login Modal -->
+<!-- Login Modal -->
+<div class="modal" id="loginModal">
+  <div class="modal__content">
+    <span class="close" data-close="loginModal">&times;</span>
+    <h2>Login</h2>
+    <form id="loginForm">
+      <input type="email" placeholder="Email" required>
+      <input type="password" placeholder="Password" required>
+      <button type="submit" class="btn">Login</button>
+    </form>
+    <p class="form-message" id="loginMessage"></p>
+  </div>
+</div>
+
+<!-- Signup Modal -->
+<div class="modal" id="signupModal">
+  <div class="modal__content">
+    <span class="close" data-close="signupModal">&times;</span>
+    <h2>Sign Up</h2>
+    <form id="signupForm">
+      <input type="text" placeholder="Username" required>
+      <input type="email" placeholder="Email" required>
+      <input type="password" placeholder="Password" required>
+      <button type="submit" class="btn">Sign Up</button>
+    </form>
+    <p class="form-message" id="signupMessage"></p>
+  </div>
+</div>
+
+
+  <!-- Hero Section -->
+  <header class="header" id="home">
+    <div class="section__container header__container">
+      <h1>DISCOVER<br /><span>THE PAST</span></h1>
+      <p>Step into history, art, and culture</p>
+      <form id="searchForm">
+  <div class="input__group">
+    <span><i class="ri-building-fill"></i></span>
+    <input type="text" id="museumName" placeholder="Which museum?" />
+  </div>
+  <div class="input__group">
+    <span><i class="ri-map-pin-2-fill"></i></span>
+    <input type="text" id="museumLocation" placeholder="City or Location" />
+  </div>
+  <div class="input__group">
+    <button type="submit" class="btn">Search</button>
+  </div>
+</form>
+
+<!-- 🔹 Result Card Container -->
+<div id="searchResult" class="search-result hidden"></div>
+
+    </div>
+  </header>
+
+  <!-- Features -->
+  <section class="section__container feature__container" id="service">
+    <div class="feature__card">
+      <img src="assets/museum1.jpg" alt="Exhibit" />
+      <div>
+        <h4>World-Class Exhibits</h4>
+        <p>From ancient relics to modern masterpieces.</p>
+      </div>
+    </div>
+    <div class="feature__card">
+      <img src="assets/museum2.jpeg" alt="Exhibit" />
+      <div>
+        <h4>Expert Guided Tours</h4>
+        <p>Gain insights from professional curators and guides.</p>
+      </div>
+    </div>
+    <div class="feature__card">
+      <img src="assets/museum3.webp" alt="Exhibit" />
+      <div>
+        <h4>Interactive Experiences</h4>
+        <p>Hands-on activities for all ages.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Museums -->
+  <section class="destination" id="destination">
+    <div class="section__container destination__container">
+      <h2 class="section__header">Featured Museums</h2>
+      <p class="section__description">
+        Explore the most renowned museums around the world
+      </p>
+      <div class="destination__grid">
+        <div class="destination__card">
+          <a href="https://www.themodern.org/" target="_blank" class="destination__card">
+          <img src="assets/museum3.jpeg" alt="museum" />
+          <div class="destination__content">The Museum of Modern Art (MoMA), New York City</div>
+        </a>
+        </div>
+        <div class="destination__card">
+          <a href="https://www.britishmuseum.org/" target="_blank" class="destination__card">
+          <img src="assets/museum4.jpg" alt="museum" />
+          <div class="destination__content">British Museum, UK</div>
+        </a>
+        </div>
+        <div class="destination__card">
+          <a href="https://www.nhm.ac.uk/" target="_blank" class="destination__card">
+          <img src="assets/museum5.jpeg" alt="museum" />
+          <div class="destination__content">Natural History Museum, London</div>
+        </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Discount -->
+  <section class="discount">
+    <div class="section__container discount__container">
+      <h2>
+        Where curiosity meets knowledge<br /><span>Uncover hidden treasures</span>
+      </h2>
+  <button class="btn" id="openVideo">Explore Now</button>
+</div>
+    </div>
+
+<!-- 🔹 Video Modal -->
+<div class="modal" id="videoModal">
+  <div class="modal__content video__content">
+    <span class="close" data-close="videoModal">&times;</span>
+    
+    <!-- Video Player -->
+    <video id="museumVideo" width="560" height="315" controls>
+      <source src="assets/museum.mp4" type="video/mp4">
+    </video>
+  </div>
+</div>
+    </div>
+  </section>
+
+  <!-- Tours -->
+  <section class="section__container package__container" id="package">
+    <h2 class="section__header">Museum Tour Packages</h2>
+    <p class="section__description">
+      Choose from curated tours and exhibitions
+    </p>
+    <div class="package__grid">
+      <div class="package__card">
+        <img src="assets/tour1.jpg" alt="tour" />
+        <div class="package__card__details">
+          <h4>Château de Vaux-le-Vicomte, France</h4>
+          <p>Explore Versailles, blending art, architecture, and gardens into one grand vision.</p>
+          <div>
+            <a href="https://app.lapentor.com/sphere/museum-1-1755875614" class="btn">Enter Tour</a>
+          </div>
+        </div>
+      </div>
+      <div class="package__card">
+        <img src="assets/museum5.jpeg" alt="tour" />
+        <div class="package__card__details">
+          <h4>Natural History Museum, London</h4>
+          <p>Perfect science lovers, and explorers </p>
+            <p> stunning architecture and interactive exhibits.</p>
+          <div>
+           <a href="https://app.lapentor.com/sphere/museum-2-1755875706" class="btn">Enter Tour</a>
+          </div>
+        </div>
+      </div>
+      <div class="package__card">
+        <img src="assets/nt.jpeg" alt="tour" />
+        <div class="package__card__details">
+          <h4>Navo Theatre, Dhaka</h4>
+          <p>a journey through the stars with thrilling planetarium shows and interactive experiences.</p>
+          <p> 5D movies, and simulators. </p>
+          <div>
+           <a href="https://app.lapentor.com/sphere/museum-3" class="btn">Enter Tour</a>
+          </div>
+        </div>
+      </div>
+      <div class="package__card">
+        <img src="assets/military.jpg" alt="tour" />
+        <div class="package__card__details">
+          <h4>Bangladesh Military Museum</h4>
+          <p>Immersive exhibits and even features amenities such as a Star Cineplex and augmented-reality displays.</p>
+          <div>
+            <a href="https://app.lapentor.com/sphere/museum-4-1755875797" class="btn">Enter Tour</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Visitors -->
+  <section class="section__container client__container" id="client">
+    <h2 class="section__header">Visitor Reviews</h2>
+    <p class="section__description">
+      Hear what our visitors have to say about their museum experience
+    </p>
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="client__card">
+            <img src="assets/aupi1.jpg" alt="visitor" />
+            <span><i class="ri-double-quotes-l"></i></span>
+            <p>
+              The guided tour was incredibly informative and engaging!
+            </p>
+            <h4>Aupi</h4>
+            <h5>History Enthusiast</h5>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="client__card">
+            <img src="assets/jim1.jpg" alt="visitor" />
+            <span><i class="ri-double-quotes-l"></i></span>
+            <p>
+              Each exhibit is thoughtfully curated, with engaging displays that bring stories to life.
+            </p>
+            <h4>Jim</h4>
+            <h5>History Enthusiast</h5>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="client__card">
+            <img src="assets/monika1.jpg" alt="visitor" />
+            <span><i class="ri-double-quotes-l"></i></span>
+            <p>
+              A wonderful blend of culture, art, and history. Highly recommended.
+            </p>
+            <h4>Monika</h4>
+            <h5>Art Lover</h5>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <section class="subscribe">
+    <div class="section__container subscribe__container">
+      <h2>Subscribe for Exhibition Updates</h2>
+      <div>
+        <p>Stay informed about upcoming exhibitions and events.</p>
+        <form action="/">
+          <input type="text" placeholder="Enter Your Email Here" />
+          <button class="btn">SUBSCRIBE</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="section__container footer__container">
+      <div class="footer__col">
+        <div class="footer__logo">
+          <a href="#" class="logo">Museo<span>360</span></a>
+        </div>
+        <p>
+          Explore the world's greatest museums and exhibitions from anywhere.
+        </p>
+        <h4>CONNECT WITH US</h4>
+        <ul class="footer__socials">
+          <li><a href="#"><i class="ri-twitter-fill"></i></a></li>
+          <li><a href="#"><i class="ri-google-fill"></i></a></li>
+          <li><a href="#"><i class="ri-linkedin-fill"></i></a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>QUICK LINKS</h4>
+        <ul class="footer__links">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Events</a></li>
+          <li><a href="#">Gallery</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>MUSEUMS</h4>
+        <ul class="footer__links">
+          <li><a href="#">The Louvre</a></li>
+          <li><a href="#">British Museum</a></li>
+          <li><a href="#">Smithsonian</a></li>
+          <li><a href="#">National Museum, Bangladesh</a></li>
+          <li><a href="#">The Met</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>OUR ACTIVITIES</h4>
+        <ul class="footer__links">
+          <li><a href="#">Guided Tours</a></li>
+          <li><a href="#">Workshops</a></li>
+          <li><a href="#">Lectures</a></li>
+          <li><a href="#">Virtual Tours</a></li>
+          <li><a href="#">Cultural Events</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bar">
+      Copyright © 2024 Museo360. All rights reserved.
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
